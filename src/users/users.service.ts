@@ -4,7 +4,6 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Role, User } from './entities/user.entity';
 import { Repository } from 'typeorm';
 import * as bcrypt from 'bcrypt';
-import { format } from 'path';
 import { formatDate } from 'src/utils/date';
 
 @Injectable()
@@ -39,6 +38,6 @@ export class UsersService {
 
 
   remove(id: string) {
-    return this.usersRepository.delete(id);
+    return this.usersRepository.update(id, { isActive: false });
   }
 }
