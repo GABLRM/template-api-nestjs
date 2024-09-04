@@ -1,7 +1,7 @@
 import { Contains, IsEmail, IsNotEmpty, IsString, IsStrongPassword, MinLength } from "class-validator";
 import { Role } from "../entities/user.entity";
 
-export class CreateUserDto {
+export class UpdateUserDto {
 
     @IsNotEmpty()
     @MinLength(3)
@@ -16,13 +16,4 @@ export class CreateUserDto {
     @MinLength(8)
     @IsNotEmpty()
     password!: string;
-
-    @IsNotEmpty()
-    role!: Role;
-
-    @IsNotEmpty()
-    isActive!: boolean;
-
-    @IsNotEmpty()
-    createdAt!: Date;
 }
