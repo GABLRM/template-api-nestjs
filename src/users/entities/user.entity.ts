@@ -1,20 +1,22 @@
 import { formatDate } from "src/utils/date";
-import { Column, Entity, PrimaryGeneratedColumn, } from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn, Unique, } from "typeorm";
 
 export enum Role {
     ADMIN = 'Admin',
     USER = 'User',
 }
 
+@Unique('UNIQUE_USERNAME', ['username'])
+@Unique('UNIQUE_EMAIL', ['email'])
 @Entity()
 export class User {
     @PrimaryGeneratedColumn("uuid")
     id: string;
 
-    @Column({unique: true})
+    @Column()
     username!: string;
 
-    @Column({unique: true})
+    @Column()
     email!: string;
 
     @Column({select: false})
