@@ -30,5 +30,4 @@ export class User {
 
     @Column({default: formatDate(new Date())})
     createdAt!: string;
-
 }

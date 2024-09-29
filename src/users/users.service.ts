@@ -43,7 +43,11 @@ export class UsersService {
   }
 
   getOne(id: string): Promise<User> {
-    return this.usersRepository.findOneBy({ id });
+    return this.usersRepository.findOneBy({ id: id });
+  }
+
+  getOneByUsername(username: string): Promise<User> {
+    return this.usersRepository.findOne({ where: { username: username }, select: ['id', 'username', 'password', 'email', 'role', 'isActive', 'createdAt'] });
   }
 
 
