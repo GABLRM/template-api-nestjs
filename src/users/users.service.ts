@@ -10,6 +10,7 @@ import { formatDate } from 'src/utils/date';
 @Injectable()
 export class UsersService {
 
+  // TODO : User Permissions with Bearer Token (JWT) and Role Guard
   constructor(
     @InjectRepository(User)
     private readonly usersRepository: Repository<User>,

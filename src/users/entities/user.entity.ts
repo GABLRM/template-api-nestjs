@@ -2,8 +2,8 @@ import { formatDate } from "src/utils/date";
 import { Column, Entity, PrimaryGeneratedColumn, Unique, } from "typeorm";
 
 export enum Role {
-    ADMIN = 'Admin',
-    USER = 'User',
+    ADMIN = 'ADMIN',
+    USER = 'USER',
 }
 
 @Unique('UNIQUE_USERNAME', ['username'])
